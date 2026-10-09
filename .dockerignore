@@ -1,0 +1,9 @@
+# Keep the build context tiny. setup_levels.sh must NOT be listed here:
+# it is bind-mounted during the build.
+.git
+.gitignore
+*.md
+Makefile
+docker-compose.yml
+tests/
+.DS_Store

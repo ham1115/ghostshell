@@ -1,0 +1,42 @@
+
+ ====================================================================
+  RELAY NINE :: RECOVERY SHELL
+ ====================================================================
+
+  Relay Nine went dark mid-shift. Six operators each held one segment
+  of the station, and each one sealed their segment behind their own
+  account on the way out. The handover keys were never collected.
+
+  You are the recovery operator. Work forward one segment at a time:
+  the key material inside segment N is the SSH password for segment
+  N+1. Segment 5 holds the trophy flag that closes the station out.
+
+ --------------------------------------------------------------------
+  HOW TO PLAY
+ --------------------------------------------------------------------
+
+   ghost-brief     what this segment wants from you (prints on login)
+   ghost-next      the exact ssh command for the next segment
+   ghost-submit    check the trophy flag once you reach the end
+
+  Moving on:   ssh level<N+1>@localhost -p 2222
+               ...or log out and ssh in from your own terminal.
+
+ --------------------------------------------------------------------
+  GROUND RULES
+ --------------------------------------------------------------------
+
+   *  Everything you need is already installed. The relay has no
+      route to the internet and does not need one.
+   *  Your home directory is readable but not writable. That is
+      deliberate — nobody can break their own puzzle. Use /tmp for
+      scratch work.
+   *  No segment can read another segment's home directory. If you
+      find yourself trying, you are off the intended path.
+   *  Brute-forcing the SSH passwords, attacking sshd, or trying to
+      reach root is out of scope. The keys are all findable.
+   *  Stuck? Re-read the brief, then read the manual page for the
+      tool it names. `man find`, `man base64`, `man xxd`.
+
+  Good hunting, operator.
+

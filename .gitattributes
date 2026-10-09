@@ -1,0 +1,12 @@
+# Shell scripts and config copied into the image must keep LF endings, or
+# the container fails to start with "bad interpreter" / "exec format error"
+# when the repository is cloned on Windows.
+* text=auto eol=lf
+*.sh    text eol=lf
+Dockerfile text eol=lf
+entrypoint.sh text eol=lf
+setup_levels.sh text eol=lf
+sshd_config text eol=lf
+motd    text eol=lf
+banner  text eol=lf
+Makefile text eol=lf
