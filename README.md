@@ -33,6 +33,7 @@ Linux from a clean machine, plus hosting for a room.
 | `sshd_config` | SSH policy: passwords on, pivoting off |
 | `motd` / `banner` | The intro players see on connect |
 | `tests/smoke_test.sh` | Solves every segment and checks isolation |
+| `deploy/*.ps1` | One-line start and stop for a Windows event host |
 | `RUNNING.md` | Cross-platform run instructions |
 | `SOLUTION.md` | **Spoilers.** Keys, intended commands, pitfalls |
 | `Makefile` | Shortcuts for the commands above |
@@ -47,7 +48,7 @@ docker compose up -d
 ssh level0@127.0.0.1 -p 2222          # password: ghostshell
 ```
 
-Or with `make`:
+Or with `make` on macOS and Linux:
 
 ```bash
 make up        # build and start
@@ -55,6 +56,18 @@ make play      # ssh in as level0
 make test      # solve every segment, verify isolation
 make down      # stop and remove
 ```
+
+Hosting an event from a **Windows** laptop? `make` is not available there, so
+use the venue scripts instead — they build, publish to the LAN, add the
+firewall rule and print the `ssh` line for the room:
+
+```powershell
+.\deploy\Start-Relay.ps1
+.\deploy\Stop-Relay.ps1 -Clean
+```
+
+See [deploy/README.md](deploy/README.md) for the parameters and the one-time
+execution-policy step.
 
 ---
 

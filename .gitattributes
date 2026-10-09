@@ -10,3 +10,7 @@ sshd_config text eol=lf
 motd    text eol=lf
 banner  text eol=lf
 Makefile text eol=lf
+
+# PowerShell helpers are Windows-native and run on the host, never inside
+# the container, so they keep CRLF.
+*.ps1   text eol=crlf

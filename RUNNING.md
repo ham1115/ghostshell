@@ -99,7 +99,11 @@ Password: `ghostshell`
   `bad interpreter`. If you cloned with Git on Windows and hit that, see
   [Troubleshooting](#container-exits-immediately-with-bad-interpreter-or-exec-format-error).
 - `make` is not installed on Windows by default. Use the `docker compose`
-  commands in this guide rather than the `make` shortcuts.
+  commands in this guide rather than the `make` shortcuts — or, if you are
+  hosting an event from this laptop, the venue scripts in
+  [deploy/](deploy/README.md), which replace the whole sequence with
+  `.\deploy\Start-Relay.ps1`.
+- `bash tests/smoke_test.sh` needs a bash. Run it from Git Bash or WSL.
 
 ---
 
@@ -251,6 +255,10 @@ warning out of `~/.ssh/known_hosts`. `make play` already does this.
 ---
 
 ## Hosting for a room
+
+> **On Windows, use the venue scripts instead of the steps below.**
+> `.\deploy\Start-Relay.ps1` does all of this — port binding, firewall rule,
+> IP detection — in one command. See [deploy/README.md](deploy/README.md).
 
 By default the relay binds to `127.0.0.1:2222`, so only the host laptop can
 reach it. To let other machines on the event LAN play against one laptop:

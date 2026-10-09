@@ -9,6 +9,7 @@
 #  Default binding is 127.0.0.1:2222 — reachable from the host laptop
 #  only. To let other machines on the event LAN play against this
 #  laptop, see "Hosting for a room" in RUNNING.md.
+#  Changed it to a loopback 0.0.0.0:2222
 # =====================================================================
 
 services:
